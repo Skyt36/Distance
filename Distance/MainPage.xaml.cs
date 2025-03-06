@@ -60,7 +60,7 @@
                 location = await Geolocation.GetLocationAsync(new GeolocationRequest
                 {
                     DesiredAccuracy = GeolocationAccuracy.High,
-                    Timeout = TimeSpan.FromSeconds(100)
+                    Timeout = TimeSpan.FromSeconds(10)
                 });
             }
             catch { }
