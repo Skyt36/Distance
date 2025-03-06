@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +11,16 @@ namespace Distance
     {
         private static Tuple<double, double>? getCoordinates(string P)
         {
+            if (!(P?.Contains(',') ?? false))
+                return null;
             var stringCoordinates = P.Split(',');
-            stringCoordinates[0] = stringCoordinates[0].Replace('.', ',').Trim();
-            stringCoordinates[1] = stringCoordinates[1].Replace('.', ',').Trim();
+            stringCoordinates[0] = stringCoordinates[0].Trim();
+            stringCoordinates[1] = stringCoordinates[1].Trim();
             double phi = 0;
-            if (!double.TryParse(stringCoordinates[0], out phi))
+            if (!double.TryParse(stringCoordinates[0], CultureInfo.InvariantCulture, out phi))
                 return null;
             double L = 0;
-            if (!double.TryParse(stringCoordinates[1], out L))
+            if (!double.TryParse(stringCoordinates[1], CultureInfo.InvariantCulture, out L))
                 return null;
             return new Tuple<double, double>(phi * Math.PI / 180, L * Math.PI / 180);
         }
