@@ -2,23 +2,27 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        string? distance;
 
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void calculateButton_Clicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            string
+                P1 = coordinatePoint1.Text,
+                P2 = coordinatePoint2.Text;
+            distance = DistanceCalculator.Distance(P1, P2).ToString();
+            if (string.IsNullOrEmpty(distance))
+            {
+                labelResult.Text = "Расстояние";
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            {
+                labelResult.Text = "Расстояние: " + distance + " км";
+            }
         }
     }
 

@@ -4,7 +4,19 @@
              x:Class="Distance.MainPage">
 
     <VerticalStackLayout Spacing="15" Padding="20">
-        
+        <Label x:Name="label1"
+               Text="Введите координаты первой точки"
+               FontSize="20"/>
+        <Entry x:Name="coordinatePoint1"/>
+        <Label x:Name="label2"
+               Text="Введите координаты второй точки"
+               FontSize="20"/>
+        <Entry x:Name="coordinatePoint2"/>
+        <Button x:Name="calculateButton"
+                Text="Вычислить"
+                Clicked="calculateButton_Clicked"/>
+        <Label x:Name="labelResult"
+               Text="Расстояние"/>
     </VerticalStackLayout>
 
 </ContentPage>
