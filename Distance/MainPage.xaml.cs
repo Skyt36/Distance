@@ -1,4 +1,6 @@
-﻿namespace Distance
+﻿using Microsoft.Maui.LifecycleEvents;
+
+namespace Distance
 {
     public partial class MainPage : ContentPage
     {
@@ -23,12 +25,6 @@
             {
                 labelResult.Text = "Расстояние: " + distance + " км";
             }
-        }
-
-        private void ContentPage_Unloaded(object sender, EventArgs e)
-        {
-            Preferences.Default.Set("entry1", coordinatePoint1.Text);
-            Preferences.Default.Set("entry2", coordinatePoint2.Text);
         }
 
         private void ContentPage_Loaded(object sender, EventArgs e)
@@ -68,6 +64,16 @@
             if (location == null)
                 return null;
             return $"{location.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}, {location.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}";
+        }
+
+        private void coordinatePoint1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Preferences.Default.Set("entry1", coordinatePoint1.Text);
+        }
+
+        private void coordinatePoint2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Preferences.Default.Set("entry2", coordinatePoint2.Text);
         }
     }
 

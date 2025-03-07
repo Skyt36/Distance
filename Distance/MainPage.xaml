@@ -2,23 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Distance.MainPage"
-             Unloaded="ContentPage_Unloaded"
              Loaded="ContentPage_Loaded">
 
     <VerticalStackLayout Spacing="15" Padding="20">
         <Label x:Name="label1"
                Text="Введите координаты первой точки"
                FontSize="20"/>
-        <Entry x:Name="coordinatePoint1"/>
+        <Entry x:Name="coordinatePoint1"
+               TextChanged="coordinatePoint1_TextChanged"/>
         <Button x:Name="getCurCoordinate1"
-                Text="Вставить текущие местоположение"
+                Text="Вставить текущее местоположение"
                 Clicked="getCurCoordinate1_Clicked"/>
         <Label x:Name="label2"
                Text="Введите координаты второй точки"
                FontSize="20"/>
-        <Entry x:Name="coordinatePoint2"/>
+        <Entry x:Name="coordinatePoint2"
+               TextChanged="coordinatePoint2_TextChanged"/>
         <Button x:Name="getCurCoordinate2"
-                Text="Вставить текущие местоположение"
+                Text="Вставить текущее местоположение"
                 Clicked="getCurCoordinate2_Clicked"/>
         <Button x:Name="calculateButton"
                 Text="Вычислить"

@@ -42,13 +42,18 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0-android|AnyCPU'">
-	  <AndroidPackageFormat>apk</AndroidPackageFormat>
-	  <DebugSymbols>True</DebugSymbols>
+	  <AndroidPackageFormat>aab</AndroidPackageFormat>
+	  <DebugSymbols>False</DebugSymbols>
 	  <AndroidKeyStore>False</AndroidKeyStore>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0-android|AnyCPU'">
 	  <AndroidKeyStore>False</AndroidKeyStore>
+	  <AndroidUseAapt2>True</AndroidUseAapt2>
+	  <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+	  <AndroidPackageFormat>aab</AndroidPackageFormat>
 	</PropertyGroup>
 
 	<ItemGroup>
