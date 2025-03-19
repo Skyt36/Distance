@@ -11,7 +11,7 @@ namespace Distance
             InitializeComponent();
         }
 
-        private void calculateButton_Clicked(object sender, EventArgs e)
+        private void calculate()
         {
             string
                 P1 = coordinatePoint1.Text,
@@ -69,11 +69,13 @@ namespace Distance
         private void coordinatePoint1_TextChanged(object sender, TextChangedEventArgs e)
         {
             Preferences.Default.Set("entry1", coordinatePoint1.Text);
+            calculate();
         }
 
         private void coordinatePoint2_TextChanged(object sender, TextChangedEventArgs e)
         {
             Preferences.Default.Set("entry2", coordinatePoint2.Text);
+            calculate();
         }
     }
 

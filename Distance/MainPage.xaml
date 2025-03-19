@@ -21,9 +21,6 @@
         <Button x:Name="getCurCoordinate2"
                 Text="Вставить текущее местоположение"
                 Clicked="getCurCoordinate2_Clicked"/>
-        <Button x:Name="calculateButton"
-                Text="Вычислить"
-                Clicked="calculateButton_Clicked"/>
         <Label x:Name="labelResult"
                Text="Расстояние"/>
     </VerticalStackLayout>
